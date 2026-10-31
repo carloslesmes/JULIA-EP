@@ -313,9 +313,9 @@ window.Quarto = {
  1.0</code></pre>
 </div>
 </div>
-<div id="cell-20" class="cell" data-execution_count="75">
+<div id="cell-20" class="cell" data-execution_count="78">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>dfm <span class="op">=</span> <span class="fu">DataFrame</span>(muestras<span class="op">=</span>muestras, medias_m<span class="op">=</span>medias_m, varianzas_m<span class="op">=</span>varianzas_m, prop_m<span class="op">=</span>prop_m)</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pretty_table</span>(dfm)<span class="co"># header_crayon = crayon"red bold")</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pretty_table</span>(dfm) <span class="co"># header_crayon = crayon"red bold")</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <div class="ansi-escaped-output">
 <pre>┌───────────────┬──────────┬─────────────┬─────────┐
@@ -574,12 +574,6 @@ window.Quarto = {
 <li><p>Sea una población normal con media <span class="math inline">\(\mu\)</span> y varianza <span class="math inline">\(\sigma^2\)</span>, si de esta población se extraen todas las muestras de tamaño <span class="math inline">\(n\)</span> sin orden y sin reemplazo y se calculan sus varianzas, éstas conforman una población de varianzas muestrales con distribución <span class="math inline">\(\chi^2\)</span> de tal forma que:</p></li>
 </ol>
 <p><span class="math display">\[\chi^2_{(n-1)}=\frac{(n-1)S^2}{\sigma^2}\]</span></p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="FormulasDM.png" class="img-fluid figure-img"></p>
-<figcaption>Fórmulas DM</figcaption>
-</figure>
-</div>
 </section>
 <section id="ejercicios" class="level2">
 <h2 class="anchored" data-anchor-id="ejercicios">Ejercicios</h2>
@@ -599,7 +593,7 @@ window.Quarto = {
 <li><p><span class="math display">\[\sigma_{\bar{X}}=\sqrt{3.24}=1.8\]</span></p></li>
 <li><p><span class="math display">\[P(\bar{X} &gt; 93)= 0.2893  \]</span></p></li>
 </ol>
-<div id="cell-51" class="cell" data-execution_count="34">
+<div id="cell-50" class="cell" data-execution_count="34">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>μ₁<span class="op">=</span><span class="fl">92</span></span>
 <span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>σ₁<span class="op">=</span><span class="fl">3.6</span></span>
 <span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>n₁<span class="op">=</span><span class="fl">4</span></span>
@@ -608,26 +602,26 @@ window.Quarto = {
 <pre><code>a) 92</code></pre>
 </div>
 </div>
-<div id="cell-52" class="cell" data-execution_count="35">
+<div id="cell-51" class="cell" data-execution_count="35">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>VM<span class="op">=</span>σ₁<span class="op">^</span><span class="fl">2</span><span class="op">/</span>n₁</span>
 <span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"b) "</span>, VM)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>b) 3.24</code></pre>
 </div>
 </div>
-<div id="cell-53" class="cell" data-execution_count="36">
+<div id="cell-52" class="cell" data-execution_count="36">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"c) "</span>, <span class="fu">√</span>(VM))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>c) 1.8</code></pre>
 </div>
 </div>
-<div id="cell-54" class="cell" data-execution_count="37">
+<div id="cell-53" class="cell" data-execution_count="37">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">println</span>(<span class="st">"d) "</span>,<span class="fu">ccdf</span>(<span class="fu">Normal</span>(μ₁,<span class="fu">√</span>(VM)),<span class="fl">93</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>d) 0.28925736075397196</code></pre>
 </div>
 </div>
-<div id="cell-55" class="cell" data-execution_count="38">
+<div id="cell-54" class="cell" data-execution_count="38">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="cn">ℯ</span>,digits<span class="op">=</span><span class="fl">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <pre><code>2.7182818285</code></pre>
@@ -644,7 +638,7 @@ window.Quarto = {
 <li><p>¿Cuál es la probabilidad de que la media muestral esté comprendida entre 790.000 y 820000 pesos?</p></li>
 </ol>
 <p>Nos dan <span class="math inline">\(N=500\)</span>, <span class="math inline">\(\mu=800000\)</span>, <span class="math inline">\(\sigma=300000\)</span> y <span class="math inline">\(n=100\)</span></p>
-<div id="cell-59" class="cell" data-execution_count="39">
+<div id="cell-58" class="cell" data-execution_count="39">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb62"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>fc1<span class="op">=</span><span class="fu">sqrt</span>((<span class="fl">500</span><span class="op">-</span><span class="fl">100</span>)<span class="op">/</span>(<span class="fl">500</span><span class="op">-</span><span class="fl">1</span>))</span>
 <span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>σ<span class="op">=</span> <span class="fl">300000</span><span class="op">/</span><span class="fu">sqrt</span>(<span class="fl">100</span>)<span class="op">*</span>fc1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
@@ -652,19 +646,19 @@ window.Quarto = {
 </div>
 </div>
 <p><span class="math inline">\(P(\bar{X} &gt;825000)\)</span></p>
-<div id="cell-61" class="cell" data-execution_count="40">
+<div id="cell-60" class="cell" data-execution_count="40">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb64"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ccdf</span>(<span class="fu">Normal</span>(<span class="fl">800_000</span>,σ),<span class="fl">825_000</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <pre><code>0.1759881306261567</code></pre>
 </div>
 </div>
-<div id="cell-62" class="cell" data-execution_count="41">
+<div id="cell-61" class="cell" data-execution_count="41">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb66"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ccdf</span>(<span class="fu">Normal</span>(<span class="fl">800_000</span>,σ),<span class="fl">780_000</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <pre><code>0.7717463192252952</code></pre>
 </div>
 </div>
-<div id="cell-63" class="cell" data-execution_count="42">
+<div id="cell-62" class="cell" data-execution_count="42">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb68"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cdf</span>(<span class="fu">Normal</span>(<span class="fl">800_000</span>,σ),<span class="fl">820_000</span>)<span class="fu">-cdf</span>(<span class="fu">Normal</span>(<span class="fl">800_000</span>,σ),<span class="fl">790_000</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <pre><code>0.41691348009790197</code></pre>
@@ -680,7 +674,7 @@ window.Quarto = {
 <li><p>¿Cuál es la probabilidad de que la proporción muestral esté comprendida entre 0.5 y 0.6?</p></li>
 </ol>
 <p>Tenemos N=528, <span class="math inline">\(\pi_1=\frac{211}{528}\)</span>, n=120</p>
-<div id="cell-66" class="cell" data-execution_count="43">
+<div id="cell-65" class="cell" data-execution_count="43">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb70"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>n<span class="op">=</span><span class="fl">120</span></span>
 <span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>π₁<span class="op">=</span><span class="fl">211</span><span class="op">/</span><span class="fl">528</span></span>
 <span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a>N<span class="op">=</span><span class="fl">528</span></span>
@@ -690,13 +684,13 @@ window.Quarto = {
 </div>
 </div>
 <p>P( p &lt; 0.33)=</p>
-<div id="cell-68" class="cell" data-execution_count="44">
+<div id="cell-67" class="cell" data-execution_count="44">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb72"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cdf</span>(<span class="fu">Normal</span>(π₁,σₚ),<span class="fl">0.33</span> )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <pre><code>0.038398467387429594</code></pre>
 </div>
 </div>
-<div id="cell-69" class="cell" data-execution_count="45">
+<div id="cell-68" class="cell" data-execution_count="45">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb74"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cdf</span>(<span class="fu">Normal</span>(π₁,σₚ),<span class="fl">0.6</span>)<span class="fu">-cdf</span>(<span class="fu">Normal</span>(π₁,σₚ),<span class="fl">0.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <pre><code>0.005365074912874301</code></pre>
@@ -711,13 +705,13 @@ window.Quarto = {
 <li><p>¿Cuál es la probabilidad de que la varianza muestral sea superior a 500?</p></li>
 </ol>
 <p>n=20, <span class="math inline">\(\sigma^2=250\)</span>, <span class="math inline">\(P(S^2 &lt; 100)=P(\chi^2_{(19)} &lt; \frac{(20-1)100}{250})\)</span></p>
-<div id="cell-73" class="cell" data-execution_count="46">
+<div id="cell-72" class="cell" data-execution_count="46">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb76"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cdf</span>(<span class="fu">Chisq</span>(<span class="fl">19</span>),(<span class="fl">20</span><span class="op">-</span><span class="fl">1</span>)<span class="op">*</span><span class="fl">100</span><span class="op">/</span><span class="fl">250</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <pre><code>0.009737257060592967</code></pre>
 </div>
 </div>
-<div id="cell-74" class="cell" data-execution_count="47">
+<div id="cell-73" class="cell" data-execution_count="47">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb78"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ccdf</span>(<span class="fu">Chisq</span>(<span class="fl">19</span>),(<span class="fl">20</span><span class="op">-</span><span class="fl">1</span>)<span class="op">*</span><span class="fl">500</span><span class="op">/</span><span class="fl">250</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <pre><code>0.005934709007201127</code></pre>
@@ -732,14 +726,14 @@ window.Quarto = {
 <li><p>Halle la probabilidad de que la desviación típica muestral sea superior a 150 pesos.</p></li>
 </ol>
 <p><span class="math inline">\(n=25\)</span>, <span class="math inline">\(\sigma=100\)</span> <span class="math inline">\(P(S &lt;75)=P(\chi^2_{(24)} &lt; \frac{(25-1)*75^2}{100^2})\)</span></p>
-<div id="cell-78" class="cell" data-execution_count="48">
+<div id="cell-77" class="cell" data-execution_count="48">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb80"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cdf</span>(<span class="fu">Chisq</span>(<span class="fl">24</span>),<span class="fl">24</span><span class="op">*</span><span class="fl">75</span><span class="op">^</span><span class="fl">2</span><span class="op">/</span><span class="fl">100</span><span class="op">^</span><span class="fl">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <pre><code>0.042850493350583566</code></pre>
 </div>
 </div>
 <p><span class="math inline">\(P(S &gt; 150)=P(\chi^2_{(24)}&gt;\frac{(25-1)*150^2}{100^2})\)</span></p>
-<div id="cell-80" class="cell" data-execution_count="49">
+<div id="cell-79" class="cell" data-execution_count="49">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb82"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ccdf</span>(<span class="fu">Chisq</span>(<span class="fl">24</span>),<span class="fl">24</span><span class="op">*</span><span class="fl">150</span><span class="op">^</span><span class="fl">2</span><span class="op">/</span><span class="fl">10062</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <pre><code>0.00047200678507302457</code></pre>
@@ -765,19 +759,19 @@ window.Quarto = {
 <li><p><span class="math inline">\(P(\bar{X} &gt; k )=0.1\)</span></p>
 <p><span class="math inline">\(P(Z &gt; \frac{k-420}{\frac{100}{\sqrt{25}}})=0.1\)</span></p></li>
 </ol>
-<div id="cell-87" class="cell" data-execution_count="50">
+<div id="cell-86" class="cell" data-execution_count="50">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb84"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a>q1 <span class="op">=</span> <span class="fu">quantile</span>(<span class="fu">Normal</span>(), <span class="fl">0.9</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <pre><code>1.2815515655446004</code></pre>
 </div>
 </div>
-<div id="cell-88" class="cell" data-execution_count="51">
+<div id="cell-87" class="cell" data-execution_count="51">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb86"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a>q2 <span class="op">=</span> <span class="fu">cquantile</span>(<span class="fu">Normal</span>(), <span class="fl">0.1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <pre><code>1.2815515655446004</code></pre>
 </div>
 </div>
-<div id="cell-89" class="cell" data-execution_count="52">
+<div id="cell-88" class="cell" data-execution_count="52">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb88"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> <span class="fu">q1*</span>(<span class="fl">100</span><span class="op">/</span><span class="fu">sqrt</span>(<span class="fl">25</span>))<span class="op">+</span><span class="fl">420</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <pre><code>445.631031310892</code></pre>
@@ -787,19 +781,19 @@ window.Quarto = {
 <li><span class="math inline">\(P(S &gt; k )=0.05\)</span></li>
 </ol>
 <p><span class="math inline">\(P(\chi^2_{(24)}&gt; \frac{(25-1)k^2}{100^2})=0.05\)</span></p>
-<div id="cell-91" class="cell" data-execution_count="53">
+<div id="cell-90" class="cell" data-execution_count="53">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb90"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a>q3<span class="op">=</span> <span class="fu">quantile</span>(<span class="fu">Chisq</span>(<span class="fl">24</span>),<span class="fl">0.95</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <pre><code>36.41502850180731</code></pre>
 </div>
 </div>
-<div id="cell-92" class="cell" data-execution_count="54">
+<div id="cell-91" class="cell" data-execution_count="54">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb92"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a>q4 <span class="op">=</span> <span class="fu">cquantile</span>(<span class="fu">Chisq</span>(<span class="fl">24</span>), <span class="fl">0.05</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <pre><code>36.41502850180731</code></pre>
 </div>
 </div>
-<div id="cell-93" class="cell" data-execution_count="55">
+<div id="cell-92" class="cell" data-execution_count="55">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb94"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a>k<span class="op">=</span><span class="fu">sqrt</span>(q3<span class="op">*</span><span class="fl">100</span><span class="op">^</span><span class="fl">2</span><span class="op">/</span><span class="fl">24</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <pre><code>123.17844187364814</code></pre>
@@ -818,25 +812,25 @@ window.Quarto = {
 <li><span class="math inline">\(P(p &gt; k)=0.8\)</span></li>
 </ol>
 <p><span class="math inline">\(P( Z &gt; \frac{k-0.4}{\sqrt{\frac{0.4(1-0.4)}{250}}})=0.8\)</span></p>
-<div id="cell-98" class="cell" data-execution_count="56">
+<div id="cell-97" class="cell" data-execution_count="56">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb96"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a>q5 <span class="op">=</span> <span class="fu">quantile</span>(<span class="fu">Normal</span>(), <span class="fl">0.2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <pre><code>-0.8416212335729143</code></pre>
 </div>
 </div>
-<div id="cell-99" class="cell" data-execution_count="57">
+<div id="cell-98" class="cell" data-execution_count="57">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb98"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a>q6 <span class="op">=</span> <span class="fu">cquantile</span>(<span class="fu">Normal</span>(), <span class="fl">0.8</span> )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <pre><code>-0.8416212335729143</code></pre>
 </div>
 </div>
-<div id="cell-100" class="cell" data-execution_count="58">
+<div id="cell-99" class="cell" data-execution_count="58">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb100"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb100-1"><a href="#cb100-1" aria-hidden="true" tabindex="-1"></a>k <span class="op">=</span> <span class="fu">q5*sqrt</span>(<span class="fl">0.4</span><span class="op">*</span><span class="fl">0.6</span><span class="op">/</span><span class="fl">250</span>)<span class="op">+</span><span class="fl">0.4</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <pre><code>0.3739233198284605</code></pre>
 </div>
 </div>
-<div id="cell-101" class="cell" data-execution_count="59">
+<div id="cell-100" class="cell" data-execution_count="59">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb102"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a>Crayons.<span class="fu">test_system_colors</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <div class="ansi-escaped-output">
@@ -877,7 +871,7 @@ window.Quarto = {
 </div>
 </div>
 </div>
-<div id="cell-102" class="cell" data-execution_count="60">
+<div id="cell-101" class="cell" data-execution_count="60">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb103"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb103-1"><a href="#cb103-1" aria-hidden="true" tabindex="-1"></a>Crayons.<span class="fu">test_256_colors</span>(codes<span class="op">=</span><span class="cn">true</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <div class="ansi-escaped-output">
@@ -990,7 +984,7 @@ Grayscale ramp (232..255):
 </div>
 </div>
 </div>
-<div id="cell-103" class="cell" data-execution_count="61">
+<div id="cell-102" class="cell" data-execution_count="61">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb104"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb104-1"><a href="#cb104-1" aria-hidden="true" tabindex="-1"></a>Crayons.<span class="fu">test_24bit_colors</span>(codes<span class="op">=</span><span class="cn">false</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <div class="ansi-escaped-output">
@@ -1177,7 +1171,7 @@ Grayscale ramp (232..255):
 </div>
 </div>
 </div>
-<div id="cell-104" class="cell" data-execution_count="62">
+<div id="cell-103" class="cell" data-execution_count="62">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb105"><pre class="sourceCode julia code-with-copy"><code class="sourceCode julia"><span id="cb105-1"><a href="#cb105-1" aria-hidden="true" tabindex="-1"></a><span class="fu">printstyled</span>(<span class="st">"Hello</span><span class="sc">\n</span><span class="st">"</span>; color <span class="op">=</span> <span class="op">:</span>blue)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <div class="ansi-escaped-output">
